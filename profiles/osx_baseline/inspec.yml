@@ -1,0 +1,8 @@
+name: osx_baseline
+title: OSX Baseline
+maintainer: Scott Ford
+copyright: The Authors
+copyright_email: sford@chef.io
+license: Apache-2.0
+summary: An baseline for compliance of OSX Endpoints
+version: 0.1.1

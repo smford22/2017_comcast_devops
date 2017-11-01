@@ -1,0 +1,26 @@
+driver:
+  name: dokken
+  chef_version: latest
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+
+verifier:
+  name: inspec
+
+platforms:
+- name: centos-7
+  driver:
+    image: dokken/centos-7
+
+suites:
+  - name: default
+    run_list:
+     # - recipe[2017_comcast_devops::default]
+    verifier:
+      inspec_tests:
+        - test/compliance/tac_plus
+    attributes:
