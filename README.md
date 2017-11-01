@@ -13,11 +13,27 @@ In order to run any of the code in this repo you will need to have the following
 - [`kitchen-dokken`](https://github.com/someara/kitchen-dokken)
 
 ## Run the Tac_Plus demo
-In this example I show how you can use InSpec to test whether a tacacs+ server is configured with an encryption key. 
+In this example I show how you can use InSpec to test whether a tacacs+ server is configured with an encryption key.
+
+#### See the test fail 
 ```
 $ cd cookbooks\tac_plus_example
 $ kitchen verify
 ```
+
+#### See the test pass
+Edit tac_plus_example\.kitchen.yml and uncomment line 22
+```
+suites:
+  - name: default
+    run_list:
+     # - recipe[2017_comcast_devops::default] <-- UNCOMMENT THIS LINE
+    verifier:
+      inspec_tests:
+        - test/compliance/tac_plus
+    attributes:
+```
+Then run `kitchen converge && kitchen verify`
 
 ## Run Mac OS X profile locally
 In this example I show how you can run an InSpec profile locally on your laptop
