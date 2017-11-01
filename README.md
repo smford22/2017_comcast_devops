@@ -57,3 +57,9 @@ $ inspec exec my-linux-baseline
 ```
 
 ## You can also use the InSpec CLI to execute profiles remotely
+
+#### Run against linux hosts
+`$ inspec exec linux-baseline -t ssh://ec2-user@<FQDN OR IP> -i /path/to/key --sudo`
+
+#### Run against windows hosts
+`$ inspec exec windows-baseline -t winrm://Administrator@<FQDN OR IP> --password <myssecurepassword>`
